@@ -1,0 +1,30 @@
+prototype(Carbon.Code2Chart:Presentation.FlowChart) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        label = ${PropTypes.string}
+        code = ${PropTypes.string}
+        showCode = ${PropTypes.boolean}
+        maxNameLength = ${PropTypes.integer}
+        class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
+    }
+
+    _js = Neos.Fusion:ResourceUri {
+        path = 'resource://Carbon.Code2Chart/Public/Main.js'
+    }
+
+    _css = Neos.Fusion:ResourceUri {
+        path = 'resource://Carbon.Code2Chart/Public/Main.css'
+    }
+
+    renderer = afx`
+        <div
+            class={Carbon.String.merge(props.class, "code-to-flowchart")}
+            data-config={Json.Stringify({showCode:props.showCode,label:props.label,maxNameLength:props.maxNameLength})}
+        >
+            <script data-slipstream src={props._js} defer></script>
+            <link data-slipstream rel="stylesheet" href={props._css} />
+            <pre class={props.showCode ? null : "code-to-flowchart__hidden"}>
+                <code>{props.code}</code>
+            </pre>
+        </div>
+    `
+}

@@ -1,0 +1,10 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Carbon.Code2Chart: true
+    userInterface:
+      translation:
+        autoInclude:
+          Carbon.Code2Chart:
+            - 'NodeTypes/*'

@@ -1,0 +1,3 @@
+prototype(Carbon.Code2Chart:Content.Item) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Carbon.Code2Chart:Integration.Item
+}

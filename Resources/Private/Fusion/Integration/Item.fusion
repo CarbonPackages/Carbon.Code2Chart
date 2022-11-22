@@ -1,0 +1,19 @@
+prototype(Carbon.Code2Chart:Integration.Item) < prototype(Neos.Fusion:Component) {
+    label = ${q(node).property('label') || q(node).property('title')}
+    code = ${q(node).property('code')}
+    showCode = ${q(node).property('showCode')}
+    maxNameLength = ${q(node).property('maxNameLength')}
+
+
+    renderer = afx`
+        <Carbon.Code2Chart:Presentation.FlowChart @if.set={props.code} {...props} />
+        <Carbon.Notification:Backend
+            class="code-to-flowchart__error"
+            content={Translation.translate('errorInCode', 'Incorrect code was specified. Please check it.', [], 'Main', 'Carbon.Code2Chart')}
+        />
+        <Carbon.Notification:Backend
+            @if.set={!props.code}
+            content={Translation.translate('noCode', 'No code has been specified yet. This can be created in the inspector.', [], 'Main', 'Carbon.Code2Chart')}
+        />
+    `
+}

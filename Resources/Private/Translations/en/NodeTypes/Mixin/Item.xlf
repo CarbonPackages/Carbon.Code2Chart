@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Carbon.Code2Chart" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Code to Flowchart</source>
+            </trans-unit>
+            <trans-unit id="groups.settings" xml:space="preserve">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="properties.label" xml:space="preserve">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="properties.maxNameLength" xml:space="preserve">
+                <source>Maximum length of the boxes</source>
+            </trans-unit>
+            <trans-unit id="properties.showCode" xml:space="preserve">
+                <source>Show code</source>
+            </trans-unit>
+            <trans-unit id="properties.code" xml:space="preserve">
+                <source>Code</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

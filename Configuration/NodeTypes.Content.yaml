@@ -1,0 +1,4 @@
+'Carbon.Code2Chart:Content.Item':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.Code2Chart:Mixin.Item': true

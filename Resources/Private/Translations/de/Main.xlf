@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Carbon.Code2Chart" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="errorInCode" xml:space="preserve">
+                <source>Incorrect code was specified. Please check it.</source>
+                <target>Es wurde fehlerhafter Code angegeben. Bitte überprüfen Sie diesen.</target>
+            </trans-unit>
+            <trans-unit id="noCode" xml:space="preserve">
+                <source>No code has been specified yet. This can be created in the inspector.</source>
+                <target>Es wurde noch kein Code angegeben. Dieser kann im Inspektor erstellt werden.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

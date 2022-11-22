@@ -1,0 +1,21 @@
+{
+    "name": "carbon/code2chart",
+    "description": "Convert code to chart",
+    "type": "neos-carbon",
+    "license": "GPL-3.0",
+    "require": {
+        "neos/neos": "^5.3 || ^7.0 || ^8.0",
+        "carbon/notification": "^2.4",
+        "sitegeist/slipstream": "^1.0 || ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbon\\Code2Chart\\": "Classes"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Carbon.Code2Chart"
+        }
+    }
+}
