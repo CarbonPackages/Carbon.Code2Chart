@@ -32,11 +32,12 @@ hljs.registerLanguage("javascript", javascript);
         let svg = svgRender.buildShapesTree(flowTree).print();
         svg = svg.replace(/width="(\d+)" height="(\d+)"/, 'viewBox="0 0 $1 $2"');
         element.insertAdjacentHTML("beforeend", svg);
-    } catch (error) {
+    } catch {
         if (window.name == "neos-content-main") {
             element.classList.add("code-to-flowchart--error");
-        } else {
-            element.remove();
+            return;
         }
+
+        element.remove();
     }
 });
