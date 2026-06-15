@@ -7,21 +7,24 @@ prototype(Carbon.Code2Chart:Presentation.FlowChart) < prototype(Neos.Fusion:Comp
         class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
     }
 
-    _js = Neos.Fusion:ResourceUri {
-        path = 'resource://Carbon.Code2Chart/Public/Main.js'
-    }
-
-    _css = Neos.Fusion:ResourceUri {
-        path = 'resource://Carbon.Code2Chart/Public/Main.css'
+    @private {
+        fileLoader = Carbon.FileLoader:Component {
+            jsFolder = null
+            cssFolder = null
+            package = 'Carbon.Code2Chart'
+            css = 'Main.css'
+            js = 'Main.js'
+        }
+        fileLoaderAsAttributes = ${!Type.isString(private.fileLoader)}
     }
 
     renderer = afx`
         <div
             class={Carbon.String.merge(props.class, "code-to-flowchart")}
             data-config={Json.Stringify({showCode:props.showCode,label:props.label,maxNameLength:props.maxNameLength})}
+            {...(private.fileLoaderAsAttributes ? private.fileLoader : {})}
         >
-            <script data-slipstream src={props._js} defer></script>
-            <link data-slipstream rel="stylesheet" href={props._css} />
+            {private.fileLoaderAsAttributes ? '' : private.fileLoader}
             <pre class={props.showCode ? null : "code-to-flowchart__hidden"}>
                 <code>{props.code}</code>
             </pre>
