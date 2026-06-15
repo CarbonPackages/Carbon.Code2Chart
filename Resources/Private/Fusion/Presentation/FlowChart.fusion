@@ -4,16 +4,21 @@ prototype(Carbon.Code2Chart:Presentation.FlowChart) < prototype(Neos.Fusion:Comp
         code = ${PropTypes.string}
         showCode = ${PropTypes.boolean}
         maxNameLength = ${PropTypes.integer}
+        includeJS = ${PropTypes.boolean}
+        includeCSS = ${PropTypes.boolean}
         class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
     }
+
+    includeJS = true
+    includeCSS = true
 
     @private {
         fileLoader = Carbon.FileLoader:Component {
             jsFolder = null
             cssFolder = null
             package = 'Carbon.Code2Chart'
-            css = 'Main.css'
-            js = 'Main.js'
+            css = ${props.includeCSS ? 'Main.css' : null}
+            js = ${props.includeJS ? 'Main.js' : null}
         }
         fileLoaderAsAttributes = ${!Type.isString(private.fileLoader)}
     }
